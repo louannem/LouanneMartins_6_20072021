@@ -1,1 +1,0 @@
-/* Factory pattern pour les photographes */

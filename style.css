@@ -5,21 +5,21 @@ body, html {
     margin: 0;
     padding: 1em;
     font-family: 'DM Sans', sans-serif;
-    display: flex;
     width: 100%;
     box-sizing: border-box;
 }
 
+header, main { padding: 1em;}
 header { 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 70%;
+    width: 65%;
     margin-right: 50px;
     color:#901C1C;
 }
 
-nav span {
+nav span, .tag-list span {
     font-size: 0.9em;
     font-weight: 500;
     padding: 3px 5px;
@@ -30,12 +30,80 @@ nav span {
 
 main {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    min-width: 30%;
+    align-items: flex-end;
+    position: relative;
+    top: -6.5em;
 }
 
 h1 {
+    width: 25%;
     font-size: 2em;
     font-weight: 400;
     color:#901C1C;
+}
+
+#photographers-list {
+    width: 100%;
+    margin-top: 5em;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,350px);
+    grid-gap: 3em 0em;
+}
+
+article { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+article a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+article img {
+    border-radius: 100px;
+}
+
+article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; margin: 2px 0px}
+
+.location {
+    font-size: 0.95em;
+    color: #901C1C
+}
+
+.price { color: #757575}
+
+#photographers-list article h2{
+    color: #D3573C;
+    font-size: 2em;
+    font-weight: 400;
+    margin: 15px 0px 0px 0px;
+}
+
+.tag-list span { color: #901C1C}
+
+
+
+
+
+/** Responsive **/
+@media screen and (max-width: 630px) {
+    main {
+        width: 100%;
+    }
+    #photographers-list {
+        grid-template-columns: 100%;
+        grid-template-rows: 350px;
+    }
 }
