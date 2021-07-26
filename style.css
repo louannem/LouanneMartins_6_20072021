@@ -73,6 +73,7 @@ article a {
 
 article img {
     border-radius: 100px;
+    object-fit: cover;
 }
 
 article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; margin: 2px 0px}

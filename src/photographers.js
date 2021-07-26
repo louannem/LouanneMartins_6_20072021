@@ -1,12 +1,13 @@
 //Class pour un photographe
 export class photographers {
-    constructor(name,city, country, tagline, price, tags = []) {
+    constructor(name,city, country, tagline, price, tags = [], portrait) {
         this.name = name;
         this.city = city;
         this.country = country;
         this.tagline = tagline;
         this.price = price;
         this.tags = tags; 
+        this.portrait = portrait;
 
     }
 
@@ -25,7 +26,7 @@ export class photographers {
 
         //Creates & insert the image
         let photographeImg = document.createElement('img');
-        let ImgURL = 'img/ellierose/Architecture_Horseshoe.jpg';
+        let ImgURL = 'img/index/' + this.portrait;
         photographeImg.setAttribute('src', ImgURL);
         photographeImg.setAttribute('height', '200px');
         photographeImg.setAttribute('width', '200px');
