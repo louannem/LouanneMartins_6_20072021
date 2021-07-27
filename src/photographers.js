@@ -1,5 +1,5 @@
 //Class pour un photographe
-export class photographers {
+export class Photographer {
     constructor(name,city, country, tagline, price, tags = [], portrait) {
         this.name = name;
         this.city = city;
@@ -12,56 +12,20 @@ export class photographers {
     }
 
     //Fonction pour implémenter les données dans le HTML
-    photographerBlock(){
-    
-        //Gets the photograph list wrapper, create and insert a new object
-        const wrapper = document.getElementById('photographers-list');
-        let article = document.createElement('article');
-        wrapper.appendChild(article);
+    photographerBlock() {
+        return `
+            <article>
+                <a href="">
+                <img src="img/index/${this.portrait}" height="200px" width="200px" alt="">
+                <h2>${this.name}</h2>
+            </a>
 
-         //Creates block for name & picture
-         let linkBlock = document.createElement('a');
-         linkBlock.setAttribute('href', '');
-         article.appendChild(linkBlock);
+            <span class="location">${this.city}, ${this.country}</span>
+            <span>${this.tagline}</span>
+            <span class="price">${this.price}€/jour</span>
 
-        //Creates & insert the image
-        let photographeImg = document.createElement('img');
-        let ImgURL = 'img/index/' + this.portrait;
-        photographeImg.setAttribute('src', ImgURL);
-        photographeImg.setAttribute('height', '200px');
-        photographeImg.setAttribute('width', '200px');
-        photographeImg.setAttribute('alt', '');
-        linkBlock.appendChild(photographeImg);
-
-        //Creates and inserts an h2 title and adds the variable
-        let photographerName = document.createElement('h2');
-        linkBlock.appendChild(photographerName);
-        photographerName.innerText = this.name;
-
-
-        //Creates and inserts the locations and adds the variables
-       let photographerCity = document.createElement('span');
-        photographerCity.classList.add('location');
-        article.appendChild(photographerCity);
-        photographerCity.innerText = this.city + ", " + this.country;
-
-        //Creates and inserts the tagline and adds the variables
-        let photographerLine = document.createElement('span');
-        article.appendChild(photographerLine);
-        photographerLine.innerText = this.tagline;
-
-        //Creates and inserts the price and adds the variables
-        let photographerPrice = document.createElement('span');
-        article.appendChild(photographerPrice);
-        photographerPrice.classList.add('price');
-        photographerPrice.innerText = this.price + "€/jour";
-
-
-        //Creates and inserts the tags and adds the variables
-        let photographerTags = document.createElement('div');
-        photographerTags.classList.add('tag-list');
-        article.appendChild(photographerTags);
-        photographerTags.innerText = this.tags;
-
+            <div class="tag-list">${this.tags}</div>
+            </article>
+        `
     }
 }

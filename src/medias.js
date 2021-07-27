@@ -1,36 +1,38 @@
 /* Factory pattern pour les photos & lightbox */
 
-class mediasFactory {
-    constructor(title, type, tags, likes, date, price, alt) {
-        let media;
+class MediasFactory {
+    constructor(object) {
 
-        this.title = title;
-        this.type = type;
-        this.tags = tags;
-        this.likes = likes;
-        this.date = date;
-        this.price = price;
-        this.alt = alt;
-
-        if(type === "image") {
-            media = new image();
-        } else if(type === "video") {
-            media = new video()
+        if(object.type === "image") {
+            return new image(object)
+        } else if(object.type === "video") {
+            return new video(object)
         }
-
         return media;
     }
 }
 
 
-class image {
-    constructor(){
-        this.type = "image";
+class Image {
+    constructor(object){
+        this.title = object.title;
+        this.type = object.type;
+        this.tags = object.tags;
+        this.likes = object.likes;
+        this.date = object.date;
+        this.price = object.price;
+        this.alt = object.alt;
     }
 }
 
-class video {
-    constructor() {
-        this.type= "video";
+class Video {
+    constructor(object) {
+        this.title = object.title;
+        this.type = object.type;
+        this.tags = object.tags;
+        this.likes = object.likes;
+        this.date = object.date;
+        this.price = object.price;
+        this.alt = object.alt;
     }
 }

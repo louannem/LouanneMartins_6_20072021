@@ -44,7 +44,7 @@ h1 {
     color:#901C1C;
 }
 
-#photographers-list {
+#photographers-list, #photographers-list-2 {
     width: 100%;
     margin-top: 5em;
     display: grid;
