@@ -1,6 +1,7 @@
 //Class pour un photographe
 export class Photographer {
-    constructor(name,city, country, tagline, price, tags = [], portrait) {
+    constructor(id, name,city, country, tagline, price, tags = [], portrait) {
+        this.id = id;
         this.name = name;
         this.city = city;
         this.country = country;
@@ -14,7 +15,7 @@ export class Photographer {
     //Fonction pour implémenter les données dans le HTML
     photographerBlock() {
         return `
-            <article>
+            <article id="${this.id}">
                 <a href="">
                 <img src="img/index/${this.portrait}" height="200px" width="200px" alt="">
                 <h2>${this.name}</h2>
