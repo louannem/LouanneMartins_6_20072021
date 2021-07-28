@@ -12,7 +12,7 @@ import dataCard from './Photographers'
     })
     .then((response)=> {
 
-        let portraitBtn = document.getElementById('portrait');
+        let portraitBtn = document.getElementById('Portrait');
         let artBtn = document.getElementById('art');
         let fashionBtn= document.getElementById('fashion');
         let architectureBtn = document.getElementById('architecture');
@@ -34,7 +34,7 @@ import dataCard from './Photographers'
                 if(response.photographers[i].tags.includes("portrait")) {
                     document.getElementById(response.photographers[i].id).style.display = "flex";
                 } else if (!response.photographers[i].tags.includes("portrait")){
-                    document.getElementById(response.photographers[i]).style.display = "none";
+                    document.getElementById(response.photographers[i].id).style.display = "none";
                 }            
             });
 
