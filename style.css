@@ -4,6 +4,7 @@
 :root {
     --red : #901C1C;
     --orange : #D3573C;
+    --shadow: 0 4px 4px 0 rgba(0,0,0,25%);
 }
 
 body, html {
@@ -83,6 +84,7 @@ article a {
 article img {
     border-radius: 100px;
     object-fit: cover;
+    box-shadow: var(--shadow);
 }
 
 article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; margin: 2px 0px}
