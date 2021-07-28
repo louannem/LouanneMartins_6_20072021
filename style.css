@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 
+:root {
+    --red : #901C1C;
+    --orange : #D3573C;
+}
+
 body, html {
     margin: 0;
     padding: 1em;
@@ -23,7 +28,7 @@ header {
 }
 
 nav a, .tag-list span {
-    color:#901C1C;
+    color:var(--red);
     font-size: 0.9em;
     font-weight: 500;
     padding: 3px 5px;
@@ -45,7 +50,7 @@ h1 {
     width: 25%;
     font-size: 2em;
     font-weight: 400;
-    color:#901C1C;
+    color:var(--red);
 }
 
 #photographers-list {
@@ -84,19 +89,19 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
 
 .location {
     font-size: 0.95em;
-    color: #901C1C
+    color: var(--red)
 }
 
 .price { color: #757575}
 
 #photographers-list article h2{
-    color: #D3573C;
+    color: var(--orange);
     font-size: 2em;
     font-weight: 400;
     margin: 15px 0px 0px 0px;
 }
 
-.tag-list span { color: #901C1C}
+.tag-list span { color: var(--red)}
 
 
 
@@ -104,11 +109,35 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
 
 /** Responsive **/
 @media screen and (max-width: 630px) {
-    main {
+
+     body { padding: 0.7em}
+
+    header, main { margin: 0; padding: 0}
+    header { 
+        flex-direction: column;
         width: 100%;
+        align-items: flex-start;
     }
+
+    header img { width: 80%;}
+
+    nav { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+        margin: 2em 0 2em 0;
+    }
+
+    nav a { margin-bottom: 5px;}
+
+    main { top: 0 }
+    h1 {text-align: center; font-size: 1em; position: relative; top: -160px; width: 44%; margin: 0}
+
     #photographers-list {
         grid-template-columns: 100%;
         grid-template-rows: 350px;
+        margin-top: 0;
     }
 }
