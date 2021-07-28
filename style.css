@@ -27,7 +27,7 @@ header {
     margin-right: 50px;
 }
 
-nav a, .tag-list span {
+nav a, .tag-list .tags {
     color:var(--red);
     font-size: 0.9em;
     font-weight: 500;
