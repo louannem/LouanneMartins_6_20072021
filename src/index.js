@@ -1,7 +1,4 @@
-import {Photographer} from './Photographers.js';
-import photographerBlock from './Photographers';
-import dataCard from './Photographers'
-
+import {Photographer} from './components/Photographers.js';
 import filterTags from './utiles/filters'
 
     fetch('data.json')

@@ -136,7 +136,7 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
 
     nav a { margin-bottom: 5px;}
 
-    main { position: absolute; top:0; padding-top: 2em; min-width: 85%; max-width: 100%;}
+    main { position: absolute; top:0; padding: 2em 0; min-width: 85%; max-width: 100%;}
     h1 {text-align: center; font-size: 1em; position: relative; top: 5px; right: -20px; width: 46%; margin: 0}
 
     #photographers-list {
