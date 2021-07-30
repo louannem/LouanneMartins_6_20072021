@@ -1,5 +1,6 @@
 import {Photographer} from './components/Photographers.js';
 import filterTags from './utiles/filters'
+import scrollBtn from './utiles/scrollBtn'
 
     fetch('data.json')
     .then((response)=> {
@@ -28,6 +29,7 @@ import filterTags from './utiles/filters'
 
             
             filterTags(); 
+            scrollBtn();
 
        }
         
