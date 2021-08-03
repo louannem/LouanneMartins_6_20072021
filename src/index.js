@@ -3,9 +3,7 @@ import filterTags from './utiles/filters'
 import scrollBtn from './utiles/scrollBtn'
 
     fetch('data.json')
-    .then((response)=> {
-            return response.json();
-    })
+    .then((response)=> { return response.json();  })
     .then((response)=> {        
 
        //Créée un nouveau photographe & l'affiche
@@ -26,7 +24,6 @@ import scrollBtn from './utiles/scrollBtn'
                 tags.innerText = " #" + response.photographers[i].tags[j] + " ";
                 tags.classList.add('tags', response.photographers[i].tags[j]);
             }
-
             
             filterTags(); 
             scrollBtn();
