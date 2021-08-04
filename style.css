@@ -156,6 +156,7 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
     height: 70px;
     color: #ffff;
     border-radius: 5px;
+    border: none;
     font-size: 1.25em;
     cursor: pointer;
     display: flex;
