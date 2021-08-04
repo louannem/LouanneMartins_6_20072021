@@ -51,12 +51,26 @@ class Video {
         this.likes = object.likes;
         this.date = object.date;
         this.price = object.price;
+        this.video = object.video;
         this.alt = object.alt;
+        this.photographerId = object.photographerId;
     }
 
     display(){
         return `
-        <p>${this.title}</p>        `
+        <article class="image__block">
+            <a href="">
+            <video src="img/${this.photographerId}/${this.video}" width="350px" height="300px" autoplay=false></video>
+            </a>
+            <div class="image__meta">
+                <span class="image__title">${this.title}</span>
+                <div class="likes__block"> 
+                    <span class="likes__numbers">${this.likes}</span>
+                    <i class="fas fa-heart likes__icon"></i>
+                </div>
+            </div>
+        </article> 
+               `
     }
 }
 

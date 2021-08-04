@@ -150,7 +150,6 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
 .tagline { color: #525252; font-size: 1.1em}
 .tag-list { margin-top: 20px}
 
-
 #contact-btn {
     background-color: var(--red);
     width: 170px;
