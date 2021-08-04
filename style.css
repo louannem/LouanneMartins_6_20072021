@@ -171,7 +171,8 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
 #block__filter span { font-weight: 700; font-size: 1.1em;}
 #toggle__filters { background-color: var(--red); border-radius: 5px; padding: 5px; box-sizing: border-box; color: #ffff}
 
-#medias__list img { object-fit: cover;}
+#medias__list { margin-top: 0px;}
+#medias__list img { object-fit: cover; border-radius: 5px;}
 .image__meta { width: 350px; font-size: 1.2em; color: var(--red); display: flex; justify-content: space-between; margin-top: 10px}
 
 
@@ -226,5 +227,5 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
         margin-top: 0px;
     }
 
-    #medias__list img { height: 190px; justify-content: center; border-radius: 5px;}
+    #medias__list img { height: 190px; justify-content: center;}
 }
