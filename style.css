@@ -201,11 +201,30 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
     nav a { margin-bottom: 5px;}
 
     #main { position: absolute; top:0; padding: 2em 0; min-width: 85%; max-width: 100%;}
-    h1 {text-align: center; font-size: 1em; position: relative; top: -10px; right: -20px; width: 46%; margin: 0}
+    #main h1 {text-align: center; font-size: 1em; position: relative; top: -10px; right: -20px; width: 46%; margin: 0}
 
     #photographers-list {
         grid-template-columns: 100%;
         grid-template-rows: 350px;
         margin-top: 170px;
     }
+
+    #photographer__block { background-color: #ffff; padding: 3em 0em}
+    #photographer__block h1 { font-size: 2em; text-align: left;}
+    #photographer__info { min-width: 60%;}
+    #photographer__block span, .tag-list { font-size: 0.8em;}
+    #photographer__info .tag-list { margin-top: 30px}
+    #photographer-block #photographer__contact{ display: none  }
+    #block__img { justify-content: flex-start;}
+    #block__img img { width: 100px; height: 100px;}
+
+    #block__filter { display: none}
+
+    #medias__list {
+        grid-template-columns: 100%;
+        grid-template-rows: 250px;
+        margin-top: 0px;
+    }
+
+    #medias__list img { height: 190px; justify-content: center; border-radius: 5px;}
 }
