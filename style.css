@@ -178,7 +178,6 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
 
 /** Responsive **/
 @media screen and (max-width: 630px) {
-
     body { padding: 0.7em}
 
     header, main { margin: 0; padding: 0}

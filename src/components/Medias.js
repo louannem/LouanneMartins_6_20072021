@@ -66,7 +66,7 @@ class Video {
                 <span class="image__title">${this.title}</span>
                 <div class="likes__block"> 
                     <span class="likes__numbers">${this.likes}</span>
-                    <i class="fas fa-heart likes__icon"></i>
+                    <i class="fas fa-heart likes__icon" aria-label ="likes"></i>
                 </div>
             </div>
         </article> 
