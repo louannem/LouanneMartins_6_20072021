@@ -5,6 +5,7 @@
     --red : #901C1C;
     --orange : #D3573C;
     --salmon: #DB8876;
+    --lightgray : #FAFAFA;
     --shadow: 0 4px 4px 0 rgba(0,0,0,25%);
 }
 
@@ -56,10 +57,10 @@ nav a, .tag-list .tags {
     font-weight: 700;
     color: #000;
     opacity: 0;
-    transition: opacity 0.7s ;
+    transition: opacity 0.2s ;
 }
 
-main {
+#main {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -75,7 +76,7 @@ h1 {
     color:var(--red);
 }
 
-#photographers-list {
+#photographers-list, #medias__list {
     width: 100%;
     margin-top: 5em;
     display: grid;
@@ -102,7 +103,7 @@ article a {
 }
 
 
-article img {
+.photographer__block img, .block__col img {
     border-radius: 100px;
     object-fit: cover;
     box-shadow: var(--shadow);
@@ -130,10 +131,55 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
 
 
 
+
+/** PAGE PHOTOGRAPHE **/
+#photographer__block {
+    width: 100%;
+    background-color: var(--lightgray);
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.block__col { width: 30%; display: flex; flex-direction: column;}
+#photographer__info { min-width: 30%;}
+#photographer__name { width: 100%; font-size: 4em; color: var(--orange); margin: 0}
+#location-tagline { display: flex; flex-direction: column;}
+.location {font-size: 2.4em;}
+.tagline { color: #525252; font-size: 1.1em}
+.tag-list { margin-top: 20px}
+
+
+#contact-btn {
+    background-color: var(--red);
+    width: 170px;
+    height: 70px;
+    color: #ffff;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.25em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+}
+
+#block__img { align-items: flex-end; justify-content: center;}
+
+#block__filter { height: 100px; display: flex; align-items: center;}
+#block__filter span { font-weight: 700; font-size: 1.1em;}
+#toggle__filters { background-color: var(--red); border-radius: 5px; padding: 5px; box-sizing: border-box; color: #ffff}
+
+#medias__list img { object-fit: cover;}
+.image__meta { width: 350px; font-size: 1.2em; color: var(--red); display: flex; justify-content: space-between; margin-top: 10px}
+
+
 /** Responsive **/
 @media screen and (max-width: 630px) {
 
-     body { padding: 0.7em}
+    body { padding: 0.7em}
 
     header, main { margin: 0; padding: 0}
     header { 
@@ -155,7 +201,7 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
 
     nav a { margin-bottom: 5px;}
 
-    main { position: absolute; top:0; padding: 2em 0; min-width: 85%; max-width: 100%;}
+    #main { position: absolute; top:0; padding: 2em 0; min-width: 85%; max-width: 100%;}
     h1 {text-align: center; font-size: 1em; position: relative; top: -10px; right: -20px; width: 46%; margin: 0}
 
     #photographers-list {

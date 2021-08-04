@@ -14,8 +14,8 @@ export class Photographer {
     //Fonction pour implémenter les données dans le HTML
     photographerBlock() {
         return `
-            <article id="${this.id}">
-                <a href="">
+            <article id="${this.id}" class="photographer__block">
+                <a href="photographer.html?id=${this.id}">
                 <img src="img/index/${this.portrait}" height="200px" width="200px" alt="">
                 <h2>${this.name}</h2>
             </a>
@@ -24,6 +24,26 @@ export class Photographer {
             <span>${this.tagline}</span>
             <span class="price">${this.price}€/jour</span>
             </article>
+        `
+    }
+
+    photographerPage() {
+        return `
+        <aside id="photographer__block">
+            <div class="block__col" id="photographer__info">
+                <h1 id="photographer__name">${this.name}</h1>
+
+                <div id="location-tagline">
+                    <span class="location">${this.city}, ${this.country}</span>
+                    <span class="tagline">${this.tagline}</span>
+                </div>
+            </div>
+
+            <div class="block__col"><button href="" onclick="" id="contact-btn">Contactez-moi</button></div>
+
+            <div class="block__col" id="block__img"><img src="img/index/${this.portrait}" height="200px" width="200px" alt="${this.name}"></div>
+            
+        </aside>
         `
     }
 }

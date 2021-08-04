@@ -76,7 +76,24 @@ export default function filterTags() {
             } 
             document.querySelectorAll('.events').forEach(btn => { btn.addEventListener('click',filterEvents); });
         }
+
     });
 
+}
+
+
+ //Filtres pour la page photographes   
+export function filterAlphabet(){
+    let objectArray = [];
+    for(let i=0; i < response.media.length; i++) {
+        if(response.media[i].photographerId == urlID) {
+            //Créer les médias ici
+            let test = new MediasFactory(response.media[i])
+            objectArray.push(test.display());
+            //console.log(objectArray);
+        }
+    }
+    let mediasPrnt = objectArray.sort();
+    document.getElementById('medias__list').innerHTML += mediasPrnt.join("");
 }
 
