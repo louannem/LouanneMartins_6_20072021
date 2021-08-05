@@ -3,6 +3,7 @@ import fetchData from '../utiles/fetchData'
 import { MediasFactory} from '../components/Medias'
 import {Image} from '../components/Medias'
 import '../components/Medias'
+import filterTags from '../utiles/filters'
 
 
 //Récupère le paramètre
@@ -41,4 +42,6 @@ fetchData()
             document.getElementById('medias__list').innerHTML += test.display();
         }
     }
+
+    filterTags();
 })
