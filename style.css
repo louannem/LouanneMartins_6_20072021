@@ -235,19 +235,19 @@ input[type="submit"]  { cursor: pointer; background-color: var(--red); color: #f
     padding: 10px 62px 0px 62px;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: #ffff;
 }
 
 .close {
     color: var(--red);
-    position: absolute;
-    top: 100px;
-    right: 0px;
+    position: fixed;
+    top: 0px;
+    right: 25px;
     z-index: 10;
-    font-size: 35px;
+    font-size: 60px;
     font-weight: bold;
     cursor: pointer;
   }
@@ -266,11 +266,16 @@ input[type="submit"]  { cursor: pointer; background-color: var(--red); color: #f
 
   .slide {
     display: none;
-    height: 100%;
+    height: 95%;
+    width: 80%;
+    overflow: hidden
   }
 
-  .slide img { object-fit: cover;}
+  .slide span { font-size: 1.5em; position: relative; bottom: 0px; color: var(--red)}
 
+  .slide__media { max-width: 100%; height: 90%;}
+  .media__block { display: flex; height: 90%; align-items: center;}
+  .media__block img { object-fit: cover;} 
 
   .previous, .next {
   cursor: pointer;
@@ -281,7 +286,7 @@ input[type="submit"]  { cursor: pointer; background-color: var(--red); color: #f
   margin-top: -50px;
   color: var(--red);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 50px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
@@ -289,7 +294,7 @@ input[type="submit"]  { cursor: pointer; background-color: var(--red); color: #f
 }
 
 .next {
-  right: 10px;
+  left: 85%;
   border-radius: 3px 0 0 3px;
 }
 

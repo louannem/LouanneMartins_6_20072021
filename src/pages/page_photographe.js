@@ -46,10 +46,7 @@ fetchData()
             let lightbox = new Lightbox(response.media[i]);
             document.getElementById('modal__content').innerHTML += lightbox.createSlide();
 
-            let medias = document.querySelectorAll('article a')            
-            //for(let n = 0; n < medias.length; n++) {   medias[n].setAttribute('onclick', 'toSlide('+n+');'); }
-            lightboxFunction();
-
+            lightboxFunction();        
         }
     }
     filterTags();
