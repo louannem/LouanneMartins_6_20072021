@@ -14,13 +14,30 @@ export default function lightboxFunction() {
     let closeLightbox = () => {  document.getElementById('lightbox').style.display = 'none'; }
     document.getElementById('close').addEventListener('click', closeLightbox);
 
-    function switchSlide(n) {
+
+
+    let switchSlide = (n) => {
         showSlide(slideIndex += n);
-    };
+    }
+
+    //Switch to next slide
+    let nextBtn =  document.getElementsByClassName('next');
+    for(let i=0; i<nextBtn.length;i++) { nextBtn[i].addEventListener('click', function() {
+        switchSlide(1)
+    });}
+    //Switch to previous slide
+    let previousBtn =  document.getElementsByClassName('previous');
+    for(let i=0; i<previousBtn.length;i++) { previousBtn[i].addEventListener('click', function() {
+        switchSlide(-1)
+    });}
+
 
     function toSlide(n) {
         showSlide(slideIndex = n);
     }
+    for(let i=0; i<articles.length;i++) { articles[i].addEventListener('click', function() {
+        toSlide(i+1)
+    });}
 
     function showSlide(n) {
         let slides = document.getElementsByClassName('slide');
@@ -37,23 +54,18 @@ export default function lightboxFunction() {
         switch (e.key) {
             case "Escape":
                 closeLightbox();
-                break;
+            break;
 
-                case "ArrowRight":
-                   switchSlide(1)
-                    break;
-                case "ArrowLeft":
-                    switchSlide(-1)
-                    break;
+            case "ArrowRight":
+               switchSlide(1)
+            break;
+
+            case "ArrowLeft":
+                switchSlide(-1)
+            break;
         }
         e.preventDefault();
     })
- 
-    /*
-    fetchData()
-    .then(response => {        
-    })
-    */
 }
 
 
