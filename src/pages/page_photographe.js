@@ -1,9 +1,11 @@
 import {Photographer} from '../components/Photographers'
 import fetchData from '../utiles/fetchData'
-import { MediasFactory} from '../components/Medias'
-import {Image} from '../components/Medias'
-import '../components/Medias'
+import {MediasFactory} from '../components/Medias'
 import filterTags from '../utiles/filters'
+import {Lightbox} from '../components/Lightbox'
+import lightboxFunction from '../utiles/modal'
+import formFunction from '../components/form'
+
 
 
 //Récupère le paramètre
@@ -38,10 +40,18 @@ fetchData()
     for(let i=0; i < response.media.length; i++) {
         if(response.media[i].photographerId == urlID) {
             //Créer les médias ici
-            let test = new MediasFactory(response.media[i])
-            document.getElementById('medias__list').innerHTML += test.display();
+            let newMedias = new MediasFactory(response.media[i])
+            document.getElementById('medias__list').innerHTML += newMedias.display();
+
+            let lightbox = new Lightbox(response.media[i]);
+            document.getElementById('modal__content').innerHTML += lightbox.createSlide();
+
+            let medias = document.querySelectorAll('article a')            
+            //for(let n = 0; n < medias.length; n++) {   medias[n].setAttribute('onclick', 'toSlide('+n+');'); }
+            lightboxFunction();
+
         }
     }
-
     filterTags();
+    formFunction();
 })

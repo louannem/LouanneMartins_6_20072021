@@ -131,10 +131,7 @@ export default function filterTags() {
                     }
                 }
                 clearPage();
-                for(let i = 0; i < objectArray.length; i++) {
-                    document.getElementById('medias__list').innerHTML += objectArray[i].display();
-                    console.log(objectArray[i].display()); 
-                } 
+                for(let i = 0; i < objectArray.length; i++) { document.getElementById('medias__list').innerHTML += objectArray[i].display();  } 
             }     
         }
         document.getElementById('toggle__filters').addEventListener('change', filterPop)
@@ -151,15 +148,11 @@ export default function filterTags() {
                         //Créer les médias ici et les ajoute dans la liste objectArray    
                         newMedias = new MediasFactory(response.media[i])
                         objectArray.push(newMedias);     
-                        objectArray.sort((a, b) => b.date - a.date); 
-                        console.log(objectArray)            
+                        objectArray.sort((a, b) => b.date - a.date);            
                     }
                 }
                 clearPage();
-                for(let i = 0; i < objectArray.length; i++) {
-                    document.getElementById('medias__list').innerHTML += objectArray[i].display();
-                    console.log(objectArray[i].display()); 
-                } 
+                for(let i = 0; i < objectArray.length; i++) { document.getElementById('medias__list').innerHTML += objectArray[i].display();       } 
             }  
         }     
     document.getElementById('toggle__filters').addEventListener('change', filterDate)

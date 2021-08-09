@@ -19,7 +19,7 @@ class Image {
         this.tags = object.tags;
         this.likes = object.likes;
         this.date = object.date;
-        this.price = object.price;
+        this.id = object.id;
         this.alt = object.alt;
         this.image = object.image;
         this.photographerId = object.photographerId;
