@@ -201,7 +201,7 @@ select, option { border: none; }
     border-radius: 5px;
     padding: 1em;
     width: 40%;
-    min-height: 80%;
+    height: 90%;
 }
 
 #form__modal h1 { color:#000; font-size: 3em; width: 100%;}
@@ -215,8 +215,9 @@ input[type="submit"]  { cursor: pointer; background-color: var(--red); color: #f
 
 #close-form {
     position:absolute;
-    top: 5%;
+    top: 0;
     right: 30%;
+    margin: 10px 10px;
     font-size: 60px;
     font-weight: 400;
     color: #ffff;

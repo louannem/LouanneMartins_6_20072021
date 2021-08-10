@@ -42,7 +42,7 @@ class VideoLightbox {
     createSlide() {
         return `
         <div class="slide">
-            <video class="slide__media" src="img/${this.photographerId}/${this.video}" alt="${this.alt}"></video>
+            <video controls class="slide__media" src="img/${this.photographerId}/${this.video}" alt="${this.alt}"></video>
             <span>${this.title}</span>
         </div>
     `

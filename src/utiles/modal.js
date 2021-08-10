@@ -1,8 +1,4 @@
-import fetchData from '../utiles/fetchData'
-
 let articles = document.getElementsByClassName('image__block');
-console.log(articles)
-
 
 export default function lightboxFunction() {
     let slideIndex = 1;
@@ -16,9 +12,7 @@ export default function lightboxFunction() {
 
 
 
-    let switchSlide = (n) => {
-        showSlide(slideIndex += n);
-    }
+    let switchSlide = (n) => { showSlide(slideIndex += n); }
 
     //Switch to next slide
     let nextBtn =  document.getElementsByClassName('next');
@@ -32,21 +26,16 @@ export default function lightboxFunction() {
     });}
 
 
-    function toSlide(n) {
-        showSlide(slideIndex = n);
-    }
+    function toSlide(n) { showSlide(slideIndex = n); }
     for(let i=0; i<articles.length;i++) { articles[i].addEventListener('click', function() {
         toSlide(i+1)
     });}
 
     function showSlide(n) {
         let slides = document.getElementsByClassName('slide');
-        let i;
         if (n > slides.length) {slideIndex = 1}
         if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
+        for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
         slides[slideIndex-1].style.display = "block";
     }
 
@@ -64,8 +53,5 @@ export default function lightboxFunction() {
                 switchSlide(-1)
             break;
         }
-        e.preventDefault();
     })
 }
-
-

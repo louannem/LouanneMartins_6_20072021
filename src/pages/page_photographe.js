@@ -45,7 +45,6 @@ fetchData()
 
             let lightbox = new Lightbox(response.media[i]);
             document.getElementById('modal__content').innerHTML += lightbox.createSlide();
-
              
         }
     }
