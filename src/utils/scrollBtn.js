@@ -1,8 +1,7 @@
 export default function scrollBtn() {
     let scroll = window.scrollY;
     let btn = document.getElementById('scroll-btn');
-    if(scroll > 0) { 
-        console.log(scroll);  
+    if(scroll > 0) {   
         btn.style.height = "30px"
         btn.style.opacity = "1";
 

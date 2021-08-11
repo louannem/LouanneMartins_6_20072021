@@ -170,6 +170,23 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
 
 #block__img { align-items: flex-end; justify-content: center;}
 
+aside {
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    right: 10%;
+    width: 300px;
+    border-radius: 5px 5px 0px 0px;
+    background-color: var(--salmon);
+    padding: 20px;
+    font-weight: 700;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+aside i { margin: 0px 5px}
+
 select {width: 170px; font-size: 1.1em; height: 60px; display: flex; align-items: center; margin: 0px 20px}
 select, option { border: none; }
 #block__filter { height: auto; display: flex; align-items: center; padding: 30px 0px;}
@@ -227,12 +244,11 @@ input[type="submit"]  { cursor: pointer; background-color: var(--red); color: #f
 
 
 
-
 /*LIGHTBOX*/
 #lightbox {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     padding: 10px 62px 0px 62px;
     left: 0;
     top: 0;

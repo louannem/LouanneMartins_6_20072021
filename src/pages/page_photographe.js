@@ -1,10 +1,11 @@
 import {Photographer} from '../components/Photographers'
-import fetchData from '../utiles/fetchData'
+import fetchData from '../utils/fetchData'
 import {MediasFactory} from '../components/Medias'
-import filterTags from '../utiles/filters'
+import filterTags from '../utils/filters'
 import {Lightbox} from '../components/Lightbox'
-import lightboxFunction from '../utiles/modal'
+import lightboxFunction from '../utils/modal'
 import formFunction from '../components/form'
+import likeFunction from '../utils/likes'
 
 
 
@@ -22,6 +23,8 @@ fetchData()
             let photographer = new Photographer("", response.photographers[i].name, response.photographers[i].city, response.photographers[i].country, response.photographers[i].tagline, response.photographers[i].price,  response.photographers[i].portrait );
             document.getElementById('photographer-block').innerHTML = photographer.photographerPage();
 
+            document.getElementById('photographer__meta').innerHTML = photographer.photographerMeta();
+
             let photographerBlock = document.getElementById("photographer__info");
             let tagBlock = document.createElement('div');
             tagBlock.classList.add('tag-list');
@@ -34,6 +37,9 @@ fetchData()
                 tags.innerText = " #" + response.photographers[i].tags[j] + " ";
                 tags.classList.add('tags');
             }
+
+
+
         }
     }
 
@@ -51,4 +57,5 @@ fetchData()
     filterTags();
     lightboxFunction();      
     formFunction();
+    likeFunction();
 })

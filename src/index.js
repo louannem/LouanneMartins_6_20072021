@@ -1,6 +1,6 @@
 import {Photographer} from './components/Photographers.js';
-import filterTags from './utiles/filters'
-import scrollBtn from './utiles/scrollBtn'
+import filterTags from './utils/filters'
+import scrollBtn from './utils/scrollBtn'
 
     fetch('data.json')
     .then((response)=> { return response.json();  })

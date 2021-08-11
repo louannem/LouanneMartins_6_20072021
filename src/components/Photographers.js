@@ -29,7 +29,7 @@ export class Photographer {
 
     photographerPage() {
         return `
-        <aside id="photographer__block">
+        <div id="photographer__block">
             <div class="block__col" id="photographer__info">
                 <h1 id="photographer__name">${this.name}</h1>
 
@@ -43,6 +43,15 @@ export class Photographer {
 
             <div class="block__col" id="block__img"><img src="img/index/${this.portrait}" height="200px" width="200px" alt="${this.name}"></div>
             
+        </div>
+        `
+    }
+
+    photographerMeta() {
+        return `
+        <aside>
+            <div id="likes__info"><span id="likes__total"></span><i class="fas fa-heart likes__icon"></i></div>
+            <div id="price__info">${this.price}€/jour</div>
         </aside>
         `
     }
