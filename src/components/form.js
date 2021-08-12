@@ -2,6 +2,7 @@ export default function formFunction() {
     //Open the form
     let openForm = () => { document.getElementById('form__background').style.display="flex" }
     document.getElementById('contact-btn').addEventListener('click', openForm)
+    document.getElementById('contact-btn-mobile').addEventListener('click', openForm)
 
     //Close the form
     let closeForm = () => {
