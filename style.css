@@ -367,7 +367,11 @@ input[type="submit"]  { cursor: pointer; background-color: var(--red); color: #f
 
     #medias__list img { height: 190px; justify-content: center;}
 
-    #lightbox { padding: 0; display: flex;}
+
+    aside { display: none;}
+
+    
+    #lightbox { padding: 0;}
     #modal__content  {
         margin: auto;
         height: 250px;

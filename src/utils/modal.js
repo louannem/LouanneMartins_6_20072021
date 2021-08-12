@@ -4,7 +4,7 @@ export default function lightboxFunction() {
     let slideIndex = 1;
     showSlide(slideIndex);
 
-    let openLightbox = (e) => { e.preventDefault(); document.getElementById('lightbox').style.display = 'block';}
+    let openLightbox = (e) => { e.preventDefault(); document.getElementById('lightbox').style.display = 'flex';}
     for (let j = 0; j < articles.length; j++) { articles[j].addEventListener('click', openLightbox); }
 
     let closeLightbox = () => {  document.getElementById('lightbox').style.display = 'none'; }
