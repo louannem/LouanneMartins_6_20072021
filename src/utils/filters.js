@@ -1,4 +1,6 @@
 import { MediasFactory } from "../components/Medias";
+import lightboxFunction from '../utils/modal'
+import { Lightbox } from "../components/Lightbox";
 
 export default function filterTags() {
     fetch('data.json')
@@ -86,6 +88,11 @@ export default function filterTags() {
             let toDelete = document.getElementsByTagName('article'); 
             for (let i = toDelete.length - 1; i >= 0; --i) {toDelete[i].remove();}
         }
+
+        let clearLightbox = () => {
+            let deleteLightbox = document.getElementsByClassName('slide');
+            for (let i = deleteLightbox.length - 1; i >= 0; --i) { deleteLightbox[i].remove();}
+        }
         
         
         //Récupère le paramètre
@@ -98,19 +105,30 @@ export default function filterTags() {
             let value = document.getElementById('toggle__filters').value;
             if(value === "titre"){
                 let objectArray = [];
+                let lightboxArray = [];
+                let newSlides;
                 for(let i=0; i < response.media.length; i++) {
                     if(response.media[i].photographerId == urlID) {
                         //Créer les médias ici et les ajoute dans la liste objectArray
                         let newMedias = new MediasFactory(response.media[i])
                         objectArray.push(newMedias.display());
+                        
+
+                        newSlides = new Lightbox(response.media[i]);
+                        lightboxArray.push(newSlides);
                     }
                 }
 
                 clearPage();
+                clearLightbox();
 
                 //Stocke la les éléments de la liste par order alphabétique
-                let mediasPrnt = objectArray.sort();           
+                let mediasPrnt = objectArray.sort();          
                 document.getElementById('medias__list').innerHTML += mediasPrnt.join("");
+                for(let i = 0; i < lightboxArray.length; i++) { 
+                    document.getElementById('modal__content').innerHTML += lightboxArray[i].createSlide();  
+                }
+                lightboxFunction();
             }     
         }
         document.getElementById('toggle__filters').addEventListener('change', filterAlphabet)
@@ -121,17 +139,29 @@ export default function filterTags() {
             let value = document.getElementById('toggle__filters').value;
             if(value === "popularite"){
                 let objectArray = [];
+                let lightboxArray = [];
                 let newMedias;
+                let newSlides;
                 for(let i=0; i < response.media.length; i++) {
                     if(response.media[i].photographerId == urlID) {
                         //Créer les médias ici et les ajoute dans la liste objectArray    
                         newMedias = new MediasFactory(response.media[i])
                         objectArray.push(newMedias);     
-                        objectArray.sort((a, b) => b.likes - a.likes);             
+                        objectArray.sort((a, b) => b.likes - a.likes); 
+                        
+                        newSlides = new Lightbox(response.media[i]);
+                        lightboxArray.push(newSlides);
+                        lightboxArray.sort((a, b) => b.likes - a.likes)
                     }
                 }
                 clearPage();
-                for(let i = 0; i < objectArray.length; i++) { document.getElementById('medias__list').innerHTML += objectArray[i].display();  } 
+                clearLightbox();
+
+                for(let i = 0; i < objectArray.length; i++) { 
+                    document.getElementById('medias__list').innerHTML += objectArray[i].display();
+                    document.getElementById('modal__content').innerHTML += lightboxArray[i].createSlide();  
+                }
+                lightboxFunction(); 
             }     
         }
         document.getElementById('toggle__filters').addEventListener('change', filterPop)

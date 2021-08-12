@@ -1,4 +1,4 @@
-let articles = document.getElementsByClassName('image__block');
+let articles = document.getElementsByClassName('media__link');
 
 export default function lightboxFunction() {
     let slideIndex = 1;

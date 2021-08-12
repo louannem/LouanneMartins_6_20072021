@@ -28,13 +28,13 @@ class Image {
     display(){
         return `
         <article class="image__block">
-            <a href="">
+            <a href="" class="media__link">
             <img alt="${this.alt}" src="img/${this.photographerId}/${this.image}" width="350px" height="300px"></img>
             </a>
             <div class="image__meta">
                 <span class="image__title">${this.title}</span>
                 <div class="likes__block"> 
-                    <span class="likes__numbers">${this.likes}</span>
+                    <span class="likes__numbers" id="${this.id}">${this.likes}</span>
                     <i class="fas fa-heart likes__icon"></i>
                 </div>
             </div>
@@ -50,7 +50,7 @@ class Video {
         this.tags = object.tags;
         this.likes = object.likes;
         this.date = object.date;
-        this.price = object.price;
+        this.id = object.id;
         this.video = object.video;
         this.alt = object.alt;
         this.photographerId = object.photographerId;
@@ -59,13 +59,13 @@ class Video {
     display(){
         return `
         <article class="image__block">
-            <a href="">
+            <a href="" class="media__link">
             <video src="img/${this.photographerId}/${this.video}" width="350px" height="300px" autoplay=false></video>
             </a>
             <div class="image__meta">
                 <span class="image__title">${this.title}</span>
                 <div class="likes__block"> 
-                    <span class="likes__numbers">${this.likes}</span>
+                    <span class="likes__numbers" id="${this.id}">${this.likes}</span>
                     <i class="fas fa-heart likes__icon" aria-label ="likes"></i>
                 </div>
             </div>
