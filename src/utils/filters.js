@@ -106,29 +106,36 @@ export default function filterTags() {
             if(value === "titre"){
                 let objectArray = [];
                 let lightboxArray = [];
+                let newMedias;
                 let newSlides;
                 for(let i=0; i < response.media.length; i++) {
                     if(response.media[i].photographerId == urlID) {
-                        //Créer les médias ici et les ajoute dans la liste objectArray
-                        let newMedias = new MediasFactory(response.media[i])
-                        objectArray.push(newMedias.display());
+                        //Créer les médias ici et les ajoute dans la liste objectArray    
+                        newMedias = new MediasFactory(response.media[i])
+                        objectArray.push(newMedias);     
+                        objectArray.sort(function(a, b){
+                            if(a.title < b.title) { return -1; }
+                            if(a.title > b.title) { return 1; }
+                            return 0;
+                        }) 
                         
-
                         newSlides = new Lightbox(response.media[i]);
                         lightboxArray.push(newSlides);
+                        lightboxArray.sort(function(a, b){
+                            if(a.title < b.title) { return -1; }
+                            if(a.title > b.title) { return 1; }
+                            return 0;
+                        })
                     }
                 }
-
                 clearPage();
                 clearLightbox();
 
-                //Stocke la les éléments de la liste par order alphabétique
-                let mediasPrnt = objectArray.sort();          
-                document.getElementById('medias__list').innerHTML += mediasPrnt.join("");
-                for(let i = 0; i < lightboxArray.length; i++) { 
+                for(let i = 0; i < objectArray.length; i++) { 
+                    document.getElementById('medias__list').innerHTML += objectArray[i].display();
                     document.getElementById('modal__content').innerHTML += lightboxArray[i].createSlide();  
                 }
-                lightboxFunction();
+                lightboxFunction(); 
             }     
         }
         document.getElementById('toggle__filters').addEventListener('change', filterAlphabet)
@@ -172,17 +179,29 @@ export default function filterTags() {
         let value = document.getElementById('toggle__filters').value;
             if(value === "date"){
                 let objectArray = [];
+                let lightboxArray = [];
                 let newMedias;
+                let newSlides;
                 for(let i=0; i < response.media.length; i++) {
                     if(response.media[i].photographerId == urlID) {
                         //Créer les médias ici et les ajoute dans la liste objectArray    
                         newMedias = new MediasFactory(response.media[i])
                         objectArray.push(newMedias);     
-                        objectArray.sort((a, b) => b.date - a.date);            
+                        objectArray.sort((a, b) => b.date - a.date); 
+                        
+                        newSlides = new Lightbox(response.media[i]);
+                        lightboxArray.push(newSlides);
+                        lightboxArray.sort((a, b) => b.date - a.date)
                     }
                 }
                 clearPage();
-                for(let i = 0; i < objectArray.length; i++) { document.getElementById('medias__list').innerHTML += objectArray[i].display();       } 
+                clearLightbox();
+
+                for(let i = 0; i < objectArray.length; i++) { 
+                    document.getElementById('medias__list').innerHTML += objectArray[i].display();
+                    document.getElementById('modal__content').innerHTML += lightboxArray[i].createSlide();  
+                }
+                lightboxFunction();  
             }  
         }     
     document.getElementById('toggle__filters').addEventListener('change', filterDate)

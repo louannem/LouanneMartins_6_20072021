@@ -17,7 +17,8 @@ class ImageLightbox {
         this.photographerId = object.photographerId;
         this.title = object.title;
         this.alt = object.alt; 
-        this.likes = object.likes
+        this.likes = object.likes;
+        this.date = object.date
     }
 
     createSlide() {
@@ -39,6 +40,7 @@ class VideoLightbox {
         this.title = object.title;
         this.alt = object.alt; 
         this.likes = object.likes;
+        this.date = object.date
     }
 
     createSlide() {
