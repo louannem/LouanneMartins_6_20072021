@@ -27,8 +27,11 @@ export default function likeFunction() {
                     let likeNumber = document.getElementById(response.media[i].id).textContent;
                     likeNumber = Number(likeNumber);
  
+                    let likeHolder = 0;
                     let addLike = () => {
-                        likeNumber += 1;
+                        //Condition pour toggle les likes
+                        if(likeHolder >= 1) { likeNumber -= 1; likeHolder -= 1;}
+                        else if(likeHolder == 0) { likeNumber += 1; likeHolder += 1}
                         document.getElementById(response.media[i].id).innerText = likeNumber;
                     }
                     iconBtn.addEventListener('click', addLike) 

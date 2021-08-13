@@ -196,7 +196,7 @@ select, option { border: none; }
 #medias__list { margin-top: 0px;}
 #medias__list img { object-fit: cover; border-radius: 5px;}
 .image__meta { width: 350px; font-size: 1.2em; color: var(--red); display: flex; justify-content: space-between; margin-top: 10px}
-
+.image__meta i { cursor: pointer;}
 
 
 /*  CONTACT FORM */
