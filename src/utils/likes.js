@@ -4,6 +4,12 @@ export default function likeFunction() {
     let likesNumbers = document.querySelectorAll('.likes__numbers');
     let numberArray = [];
     let likesSum = 0;
+    let storeLike = [];
+
+
+    likesNumbers.forEach(element => { numberArray.push(element.textContent); })
+    for(let i= 0; i < numberArray.length; i++) {  likesSum += Number(numberArray[i]);   }
+    document.getElementById('likes__total').innerText = likesSum; 
 
 
     //Récupère le paramètre
@@ -27,22 +33,26 @@ export default function likeFunction() {
                     let likeNumber = document.getElementById(response.media[i].id).textContent;
                     likeNumber = Number(likeNumber);
  
+                    storeLike.push(likeNumber);
+                    let likeTotal = 0;
+                    let newSum = 0;
                     let likeHolder = 0;
+                    for(let j= 0; j < storeLike.length; j++) {  likeTotal += storeLike[j];    }
+                    console.log(likeTotal)
+
                     let addLike = () => {
                         //Condition pour toggle les likes
-                        if(likeHolder >= 1) { likeNumber -= 1; likeHolder -= 1;}
-                        else if(likeHolder == 0) { likeNumber += 1; likeHolder += 1}
+                        if(likeHolder >= 1) { likeNumber -= 1; likeHolder -= 1; newSum = -1; }
+                        else if(likeHolder == 0) { likeNumber += 1; likeHolder += 1; newSum = 1; }
                         document.getElementById(response.media[i].id).innerText = likeNumber;
+
+                        likesSum += newSum;
+                        document.getElementById('likes__total').innerText = likesSum; 
+
                     }
-                    iconBtn.addEventListener('click', addLike) 
+                    iconBtn.addEventListener('click', addLike)
                 }
             }
         }
     })
-
-
-    //for(let i = 0; i < iconBtn.length; i++) {  iconBtn[i].addEventListener('click', addLike)   }
-    likesNumbers.forEach(element => { numberArray.push(element.textContent); })
-    for(let i= 0; i < numberArray.length; i++) {  likesSum += Number(numberArray[i]);   }
-    document.getElementById('likes__total').innerText = likesSum; 
 }

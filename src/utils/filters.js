@@ -1,6 +1,7 @@
 import { MediasFactory } from "../components/Medias";
 import lightboxFunction from '../utils/modal'
 import { Lightbox } from "../components/Lightbox";
+import likeFunction from "./likes";
 
 export default function filterTags() {
     fetch('data.json')
@@ -136,6 +137,7 @@ export default function filterTags() {
                     document.getElementById('modal__content').innerHTML += lightboxArray[i].createSlide();  
                 }
                 lightboxFunction(); 
+                likeFunction();
             }     
         }
         document.getElementById('toggle__filters').addEventListener('change', filterAlphabet)
@@ -168,7 +170,8 @@ export default function filterTags() {
                     document.getElementById('medias__list').innerHTML += objectArray[i].display();
                     document.getElementById('modal__content').innerHTML += lightboxArray[i].createSlide();  
                 }
-                lightboxFunction(); 
+                lightboxFunction();
+                likeFunction(); 
             }     
         }
         document.getElementById('toggle__filters').addEventListener('change', filterPop)
@@ -202,6 +205,7 @@ export default function filterTags() {
                     document.getElementById('modal__content').innerHTML += lightboxArray[i].createSlide();  
                 }
                 lightboxFunction();  
+                likeFunction();
             }  
         }     
     document.getElementById('toggle__filters').addEventListener('change', filterDate)
