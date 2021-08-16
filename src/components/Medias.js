@@ -29,7 +29,7 @@ class Image {
         return `
         <article class="image__block">
             <a href="" class="media__link">
-            <img alt="${this.alt}" src="img/${this.photographerId}/${this.image}" width="350px" height="300px"></img>
+            <img alt="${this.alt}" src="img/${this.photographerId}/${this.image}"></img>
             </a>
             <div class="image__meta">
                 <span class="image__title">${this.title}</span>
@@ -60,7 +60,7 @@ class Video {
         return `
         <article class="image__block">
             <a href="" class="media__link">
-            <video src="img/${this.photographerId}/${this.video}" width="350px" height="300px" autoplay=false></video>
+            <video src="img/${this.photographerId}/${this.video}" autoplay=false></video>
             </a>
             <div class="image__meta">
                 <span class="image__title">${this.title}</span>

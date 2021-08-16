@@ -2,13 +2,20 @@ import fetchData from "./fetchData";
 
 export default function likeFunction() {
     let likesNumbers = document.querySelectorAll('.likes__numbers');
-    let numberArray = [];
-    let likesSum = 0;
+    let likeArray = [];
     let storeLike = [];
 
+    //Si localStorage pre-existant ou non
+    let likesSum = 0;
+    
+    if(localStorage.getItem('Likes total') != null) {
+        console.log("Fetch likes");
+    } else {
+        console.log("Use 0")
+    }
 
-    likesNumbers.forEach(element => { numberArray.push(element.textContent); })
-    for(let i= 0; i < numberArray.length; i++) {  likesSum += Number(numberArray[i]);   }
+    likesNumbers.forEach(element => { likeArray.push(element.textContent); })
+    for(let i= 0; i < likeArray.length; i++) {  likesSum += Number(likeArray[i]);   }
     document.getElementById('likes__total').innerText = likesSum; 
 
 
@@ -16,7 +23,7 @@ export default function likeFunction() {
     const queryString  = window.location.search;
     //Réucpère l'id
     const urlParam = new URLSearchParams(queryString);
-    const urlID = urlParam.get('id')
+    const urlID = urlParam.get('id');
 
     fetchData()
     .then(response => {
@@ -34,11 +41,12 @@ export default function likeFunction() {
                     likeNumber = Number(likeNumber);
  
                     storeLike.push(likeNumber);
+
                     let likeTotal = 0;
                     let newSum = 0;
                     let likeHolder = 0;
                     for(let j= 0; j < storeLike.length; j++) {  likeTotal += storeLike[j];    }
-                    console.log(likeTotal)
+
 
                     let addLike = () => {
                         //Condition pour toggle les likes

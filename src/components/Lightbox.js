@@ -24,7 +24,7 @@ class ImageLightbox {
     createSlide() {
         return `
         <div class="slide">
-            <div class="media__block"><img class="slide__media" src="img/${this.photographerId}/${this.image}" alt="${this.alt}" width="100%"></img></div>
+            <div class="media__block"><img class="slide__media" src="img/${this.photographerId}/${this.image}" alt="${this.alt}"></img></div>
             <span>${this.title}</span>
         </div>
     `
