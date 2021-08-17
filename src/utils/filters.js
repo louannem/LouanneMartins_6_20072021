@@ -90,6 +90,7 @@ export default function filterTags() {
             for (let i = toDelete.length - 1; i >= 0; --i) {toDelete[i].remove();}
         }
 
+        //Réinitialise la lightbox
         let clearLightbox = () => {
             let deleteLightbox = document.getElementsByClassName('slide');
             for (let i = deleteLightbox.length - 1; i >= 0; --i) { deleteLightbox[i].remove();}
@@ -140,7 +141,10 @@ export default function filterTags() {
                 likeFunction();
             }     
         }
-        document.getElementById('toggle__filters').addEventListener('change', filterAlphabet)
+
+        if(document.getElementById('toggle__filters')) {document.getElementById('toggle__filters').addEventListener('change', filterAlphabet)}
+        else { }
+        
 
 
 
@@ -174,7 +178,8 @@ export default function filterTags() {
                 likeFunction(); 
             }     
         }
-        document.getElementById('toggle__filters').addEventListener('change', filterPop)
+        if(document.getElementById('toggle__filters')) {document.getElementById('toggle__filters').addEventListener('change', filterPop)}
+        else { }
 
 
         
@@ -208,7 +213,8 @@ export default function filterTags() {
                 likeFunction();
             }  
         }     
-    document.getElementById('toggle__filters').addEventListener('change', filterDate)
+        if(document.getElementById('toggle__filters')) {document.getElementById('toggle__filters').addEventListener('change', filterDate)}
+        else { }
         
     });
 }
