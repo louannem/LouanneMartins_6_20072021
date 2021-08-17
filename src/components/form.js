@@ -1,13 +1,16 @@
 export default function formFunction() {
     //Open the form
     let openForm = () => { document.getElementById('form__background').style.display="flex" }
-    document.getElementById('contact-btn').addEventListener('click', openForm)
-    document.getElementById('contact-btn-mobile').addEventListener('click', openForm)
+
+    if( document.getElementById('contact-btn') || document.getElementById('contact-btn-mobile')) {
+        document.getElementById('contact-btn').addEventListener('click', openForm);
+        document.getElementById('contact-btn-mobile').addEventListener('click', openForm);
+    }
 
     //Close the form
-    let closeForm = () => {
-        document.getElementById('form__background').style.display = "none" }
-    document.getElementById('close-form').addEventListener('click', closeForm)
+    let closeForm = () => { document.getElementById('form__background').style.display = "none" }
+
+    if(document.getElementById('close-form')) { document.getElementById('close-form').addEventListener('click', closeForm)}
 
     //Send the form
     let sendForm = (e) => {
@@ -19,7 +22,8 @@ export default function formFunction() {
         document.getElementById('form__background').style.display = "none";
         console.log("Nom:",lastName,"Prénom: ",firstName,"Email: ", email, "Message: ", message)
     }
-    document.getElementById('submit-btn').addEventListener('click', sendForm)
+
+    if(document.getElementById('submit-btn')) {document.getElementById('submit-btn').addEventListener('click', sendForm)}
 
     window.addEventListener('keydown', function(e) {
         switch (e.key) {

@@ -17,7 +17,7 @@ export default function likeFunction() {
     likesSum = 0;
     likesNumbers.forEach(element => { likeArray.push(element.textContent); })
     for(let i= 0; i < likeArray.length; i++) {  likesSum += Number(likeArray[i]);   }
-    document.getElementById('likes__total').innerText = likesSum; 
+    if(document.getElementById('likes__total')) { document.getElementById('likes__total').innerText = likesSum;  }
 
     fetchData()
     .then(response => {
@@ -51,7 +51,8 @@ export default function likeFunction() {
                         likesSum += addedLike;
                         document.getElementById('likes__total').innerText = likesSum; 
                     }
-                    iconBtn.addEventListener('click', addLike);
+
+                    if(iconBtn) {iconBtn.addEventListener('click', addLike);}
                 }
 
                 

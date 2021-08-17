@@ -37,9 +37,6 @@ fetchData()
                 tags.innerText = " #" + response.photographers[i].tags[j] + " ";
                 tags.classList.add('tags');
             }
-
-
-
         }
     }
 
@@ -51,11 +48,12 @@ fetchData()
 
             let lightbox = new Lightbox(response.media[i]);
             document.getElementById('modal__content').innerHTML += lightbox.createSlide();
+
+            lightboxFunction(); 
              
         }
     }
-    filterTags();
-    lightboxFunction();      
+    filterTags();     
     formFunction();
     likeFunction();
 })
