@@ -1,29 +1,23 @@
 import fetchData from "./fetchData";
 
 export default function likeFunction() {
-    let likesNumbers = document.querySelectorAll('.likes__numbers');
-    let likeArray = [];
-    let storeLike = [];
-
-    //Si localStorage pre-existant ou non
-    let likesSum = 0;
-    
-    if(localStorage.getItem('Likes total') != null) {
-        console.log("Fetch likes");
-    } else {
-        console.log("Use 0")
-    }
-
-    likesNumbers.forEach(element => { likeArray.push(element.textContent); })
-    for(let i= 0; i < likeArray.length; i++) {  likesSum += Number(likeArray[i]);   }
-    document.getElementById('likes__total').innerText = likesSum; 
-
-
     //Récupère le paramètre
     const queryString  = window.location.search;
     //Réucpère l'id
     const urlParam = new URLSearchParams(queryString);
     const urlID = urlParam.get('id');
+
+
+    let likesNumbers = document.querySelectorAll('.likes__numbers');
+    let likeArray = [];
+    let storeLike = [];
+    let likesSum;
+
+    //Nombre de likes par défaut
+    likesSum = 0;
+    likesNumbers.forEach(element => { likeArray.push(element.textContent); })
+    for(let i= 0; i < likeArray.length; i++) {  likesSum += Number(likeArray[i]);   }
+    document.getElementById('likes__total').innerText = likesSum; 
 
     fetchData()
     .then(response => {
@@ -43,24 +37,27 @@ export default function likeFunction() {
                     storeLike.push(likeNumber);
 
                     let likeTotal = 0;
-                    let newSum = 0;
+                    let addedLike = 0;
                     let likeHolder = 0;
-                    for(let j= 0; j < storeLike.length; j++) {  likeTotal += storeLike[j];    }
 
+                    for(let j= 0; j < storeLike.length; j++) {  likeTotal += storeLike[j];    }
 
                     let addLike = () => {
                         //Condition pour toggle les likes
-                        if(likeHolder >= 1) { likeNumber -= 1; likeHolder -= 1; newSum = -1; }
-                        else if(likeHolder == 0) { likeNumber += 1; likeHolder += 1; newSum = 1; }
+                        if(likeHolder >= 1) { likeNumber -= 1; likeHolder -= 1; addedLike = -1; }
+                        else if(likeHolder == 0) { likeNumber += 1; likeHolder += 1; addedLike = 1; }
                         document.getElementById(response.media[i].id).innerText = likeNumber;
 
-                        likesSum += newSum;
+                        likesSum += addedLike;
                         document.getElementById('likes__total').innerText = likesSum; 
-
                     }
-                    iconBtn.addEventListener('click', addLike)
+                    iconBtn.addEventListener('click', addLike);
                 }
+
+                
             }
         }
     })
+
+    
 }
