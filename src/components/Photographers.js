@@ -34,7 +34,7 @@ export class Photographer {
                 <h1 id="photographer__name">${this.name}</h1>
 
                 <div id="location-tagline">
-                    <span class="location">${this.city}, ${this.country}</span>
+                    <span id="location">${this.city}, ${this.country}</span>
                     <span class="tagline">${this.tagline}</span>
                 </div>
             </div>

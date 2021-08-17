@@ -45,7 +45,7 @@ nav a, .tag-list .tags {
 }
 
 .tag-list .tags:focus, .tag-list .tags:hover, nav a:hover, nav a:focus { background-color: var(--red); color: #ffff; border: var(--red) solid 0.5px;}
-.tags:focus-visible,  nav a:focus-visible { border: none;}
+.tags:focus-visible,  nav a:focus-visible { outline: none;}
 
 #scroll-block, #scroll-btn { display: flex ; align-items: center; justify-content: center;}
 
@@ -149,11 +149,12 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
 }
 
 .block__col { width: 30%; display: flex; flex-direction: column;}
-#photographer__info { min-width: 30%;}
+#photographer__info { min-width: 40%;}
 #photographer__name { width: 100%; font-size: 4em; color: var(--orange); margin: 0}
 #location-tagline { display: flex; flex-direction: column;}
-.location {font-size: 2.4em;}
-.tagline { color: #525252; font-size: 1.1em}
+#location, .tagline { margin: 5px 0px; font-size: 1.5em}
+#location {color: var(--red)}
+.tagline { color: #525252;}
 .tag-list { margin-top: 20px}
 
 #contact-btn, #contact-btn-mobile {
@@ -171,7 +172,8 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
     margin: 0 15px;
 }
 
-#contact-btn:hover, #contact-btn:focus, #contact-btn-mobile:hover, #contact-btn-mobile:focus { background-color: var(--salmon); color: #000 }
+#contact-btn:hover, #contact-btn:focus, #contact-btn-mobile:hover, #contact-btn-mobile:focus { background-color: var(--salmon); color: #000; }
+#contact-btn:focus-visible { outline: none;}
 
 #block__img { align-items: flex-end; justify-content: center;}
 
