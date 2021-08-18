@@ -37,6 +37,13 @@ fetchData()
                 tags.innerText = " #" + response.photographers[i].tags[j] + " ";
                 tags.classList.add('tags');
             }
+
+
+            //Change the page title
+            document.title =  response.photographers[i].name;
+
+            //Change the form title
+            document.getElementById('modal-title').innerText = "Contactez-moi " + response.photographers[i].name;
         }
     }
 

@@ -1,4 +1,5 @@
 export default function formFunction() {
+
     //Open the form
     let openForm = () => { 
         document.getElementById('form__background').style.display="flex";  

@@ -230,7 +230,7 @@ select, option { border: none; }
     height: 90%;
 }
 
-#form__modal h1 { color:#000; font-size: 3em; width: 100%;}
+#form__modal h1 { color:#000; font-size: 3em; width: 70%; margin-top: 0px}
 
 form, input[type="text"], textarea { width: 100%;}
 form input { height: 38px}
