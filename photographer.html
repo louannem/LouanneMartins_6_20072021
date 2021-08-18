@@ -15,23 +15,31 @@
     </header>
 
     <main>
-        <section id="photographer-block"></section>
-        <div id="photographer__meta"></div>
-        <div id="contact__mobile">
-            <button href="" onclick="" id="contact-btn-mobile">Contactez-moi</button>
-        </div>
-        <div id="block__filter">
-            <span>Trier par</span>
-            <select id="toggle__filters">
-                <option value="popularite">Popularité</option>
-                <option value="date" selected>Date</option>
-                <option value="titre">Titre</option>
-            </select>
-        </div>
+        <section id="main__wrapper" aria-hidden="false">
+            <section id="photographer-block"></section>
+            <div id="photographer__meta"></div>
+            <div id="contact__mobile">
+                <button href="" onclick="" id="contact-btn-mobile">Contactez-moi</button>
+            </div>
 
-        <div id="form__background">
+            <div id="block__filter">
+                <span>Trier par</span>
+                <select id="toggle__filters" label="toggle__filters" for="toggle__filters">
+                    <option value="popularite">Popularité</option>
+                    <option value="date" selected>Date</option>
+                    <option value="titre">Titre</option>
+                </select>
+            </div>
+
+            <section id="medias__list"></section>
+        </section>
+        
+        
+        
+
+        <div id="form__background" role="dialog" aria-hidden="true" aria-describedby="modal-title">
             <modal id="form__modal">
-                <h1>Contactez-moi Mimi Keel</h1>
+                <h1 id="modal-title">Contactez-moi Mimi Keel</h1>
                 <form
                 name="contact"
                 action="photographer.html"
@@ -39,7 +47,7 @@
                 >
 
                 <div class="form__input">
-                    <label for="prenom">Prénom</label><br>
+                    <label for="prenom">Prénom</label>
                     <input 
                     type="text"
                     id="prenom"
@@ -48,7 +56,7 @@
                 </div>
 
                 <div class="form__input">
-                    <label for="nom">Nom</label><br>
+                    <label for="nom">Nom</label>
                     <input 
                     type="text"
                     id="nom"
@@ -57,7 +65,7 @@
                 </div>
 
                 <div class="form__input">
-                    <label for="email">Email</label><br>
+                    <label for="email">Email</label>
                     <input 
                     type="text"
                     id="email"
@@ -66,7 +74,7 @@
                 </div>
 
                 <div class="form__input">
-                    <label for="message">Votre message</label><br>
+                    <label for="message">Votre message</label>
                     <textarea name="message" id="message" cols="30" rows="10"></textarea>
                 </div>
 
@@ -82,13 +90,12 @@
             </modal>
         </div>
 
-        <modal id="lightbox">
+        <modal id="lightbox"  aria-hidden="true" role="dialog" aria-describedby="media-title">
             <span class="close" id="close">&times;</span>
             <div id="modal__content"></div>
             <a class="previous" id="previous">&#10094;</a>
             <a class="next" id="next">&#10095;</a>
         </modal>
-        <section id="medias__list"></section>
     </main>
     
     <script src="./dist/app.bundle.js"></script>

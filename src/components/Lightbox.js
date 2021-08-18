@@ -25,7 +25,7 @@ class ImageLightbox {
         return `
         <div class="slide">
             <div class="media__block"><img class="slide__media" src="img/${this.photographerId}/${this.image}" alt="${this.alt}"></img></div>
-            <span>${this.title}</span>
+            <span id="media-title">${this.title}</span>
         </div>
     `
     }
@@ -47,7 +47,7 @@ class VideoLightbox {
         return `
         <div class="slide">
             <video controls class="slide__media" src="img/${this.photographerId}/${this.video}" alt="${this.alt}"></video>
-            <span>${this.title}</span>
+            <span id="media-title">${this.title}</span>
         </div>
     `
     }

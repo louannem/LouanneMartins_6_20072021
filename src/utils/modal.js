@@ -4,10 +4,20 @@ export default function lightboxFunction() {
     let slideIndex = 1;
     showSlide(slideIndex);
 
-    let openLightbox = (e) => { e.preventDefault(); document.getElementById('lightbox').style.display = 'flex';}
+    let openLightbox = (e) => { 
+        e.preventDefault(); 
+        document.getElementById('close').focus();
+        document.getElementById('lightbox').style.display = 'flex';
+        document.getElementById('lightbox').setAttribute('aria-hidden', 'false');
+        document.getElementById('main__wrapper').setAttribute('aria-hidden', 'true');
+    }
     for (let j = 0; j < articles.length; j++) { articles[j].addEventListener('click', openLightbox); }
 
-    let closeLightbox = () => {  document.getElementById('lightbox').style.display = 'none'; }
+    let closeLightbox = () => {  
+        document.getElementById('lightbox').style.display = 'none'; 
+        document.getElementById('lightbox').setAttribute('aria-hidden', 'true');
+        document.getElementById('main__wrapper').setAttribute('aria-hidden', 'false');
+    }
     document.getElementById('close').addEventListener('click', closeLightbox);
 
 

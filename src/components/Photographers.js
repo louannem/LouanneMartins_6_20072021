@@ -16,7 +16,7 @@ export class Photographer {
         return `
             <article id="${this.id}" class="photographer__block">
                 <a href="photographer.html?id=${this.id}">
-                <img src="img/index/${this.portrait}" height="200px" width="200px" alt="">
+                <img src="img/index/${this.portrait}" alt="">
                 <h2>${this.name}</h2>
             </a>
 

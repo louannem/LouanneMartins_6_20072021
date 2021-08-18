@@ -1,6 +1,10 @@
 export default function formFunction() {
     //Open the form
-    let openForm = () => { document.getElementById('form__background').style.display="flex" }
+    let openForm = () => { 
+        document.getElementById('form__background').style.display="flex";  
+        document.getElementById('form__background').setAttribute('aria-hidden', 'false');
+        document.getElementById('main__wrapper').setAttribute('aria-hidden', 'true')  ;
+    }
 
     if( document.getElementById('contact-btn') || document.getElementById('contact-btn-mobile')) {
         document.getElementById('contact-btn').addEventListener('click', openForm);
@@ -8,7 +12,11 @@ export default function formFunction() {
     }
 
     //Close the form
-    let closeForm = () => { document.getElementById('form__background').style.display = "none" }
+    let closeForm = () => { 
+        document.getElementById('form__background').style.display = "none"; 
+        document.getElementById('form__background').setAttribute('aria-hidden', 'true') ;
+        document.getElementById('main__wrapper').setAttribute('aria-hidden', 'false')
+    }
 
     if(document.getElementById('close-form')) { document.getElementById('close-form').addEventListener('click', closeForm)}
 
