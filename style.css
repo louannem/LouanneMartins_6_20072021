@@ -337,7 +337,7 @@ input[type="submit"]  { cursor: pointer; background-color: var(--red); color: #f
         flex-direction: column;
         width: 100%;
         align-items: flex-start;
-        padding: 0;
+        padding: 0 0.7em;
     }
 
     header img { width: 80%; padding: 0.7em 0;}
@@ -362,7 +362,7 @@ input[type="submit"]  { cursor: pointer; background-color: var(--red); color: #f
         margin-top: 170px;
     }
 
-    #photographer__block { background-color: #ffff; padding: 3em 0.7em}
+    #photographer__block { background-color: #ffff; padding: 1em 0em}
     #photographer__block h1 { font-size: 2em; text-align: left;}
     #photographer__info { min-width: 60%;}
     #photographer__block span, .tag-list { font-size: 0.8em;}
@@ -374,7 +374,7 @@ input[type="submit"]  { cursor: pointer; background-color: var(--red); color: #f
     #contact__mobile { 
         display: flex;
         position: fixed;
-        bottom: 0;
+        bottom: 10px;
         align-items: center;
         justify-content: center;
         width: 100%;
@@ -389,9 +389,10 @@ input[type="submit"]  { cursor: pointer; background-color: var(--red); color: #f
         grid-template-columns: 100%;
         grid-template-rows: 250px;
         margin-top: 0px;
+        padding: 0;
     }
 
-    #medias__list img { height: 190px; justify-content: center;}
+    #medias__list img, #medias__list video { height: 190px; justify-content: center;}
 
 
     aside { display: none;}
