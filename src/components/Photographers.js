@@ -41,7 +41,7 @@ export class Photographer {
 
             <div class="block__col" id="photographer__contact"><button href="" onclick="" id="contact-btn">Contactez-moi</button></div>
 
-            <div class="block__col" id="block__img"><img src="../img/index/${this.portrait}" height="200px" width="200px" alt="${this.name}"></div>
+            <div class="block__col" id="block__img"><img src="../img/PhotographersIDPhotos/${this.portrait}" height="200px" width="200px" alt="${this.name}"></div>
             
         </div>
         `
