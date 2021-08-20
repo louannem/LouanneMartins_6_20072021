@@ -20,7 +20,7 @@ fetchData()
 
     for (let i = 0; i < response.photographers.length; i++) {
         if(response.photographers[i].id == urlID) {
-            let photographer = new Photographer("", response.photographers[i].name, response.photographers[i].city, response.photographers[i].country, response.photographers[i].tagline, response.photographers[i].price,  response.photographers[i].portrait );
+            let photographer = new Photographer(response.photographers[i]);
             document.getElementById('photographer-block').innerHTML = photographer.photographerPage();
 
             document.getElementById('photographer__meta').innerHTML = photographer.photographerMeta();

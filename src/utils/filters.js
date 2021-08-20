@@ -2,14 +2,10 @@ import { MediasFactory } from "../components/Medias";
 import lightboxFunction from '../utils/modal'
 import { Lightbox } from "../components/Lightbox";
 import likeFunction from "./likes";
+import fetchData from "./fetchData";
 
 export default function filterTags() {
-    fetch('data.json')
-    .then((response)=> {
-        if(response.ok) {
-            return response.json();
-        }
-    })
+    fetchData()
     .then((response)=> {
         for(let i=0; i<response.photographers.length;i++){
             //Portrait
@@ -103,50 +99,47 @@ export default function filterTags() {
         const urlParam = new URLSearchParams(queryString);
         const urlID = urlParam.get('id');
 
-        let filterAlphabet = () => {
-            let value = document.getElementById('toggle__filters').value;
-            if(value === "titre"){
-                let objectArray = [];
-                let lightboxArray = [];
-                let newMedias;
-                let newSlides;
-                for(let i=0; i < response.media.length; i++) {
-                    if(response.media[i].photographerId == urlID) {
-                        //Créer les médias ici et les ajoute dans la liste objectArray    
-                        newMedias = new MediasFactory(response.media[i])
-                        objectArray.push(newMedias);     
-                        objectArray.sort(function(a, b){
-                            if(a.title < b.title) { return -1; }
-                            if(a.title > b.title) { return 1; }
-                            return 0;
-                        }) 
-                        
-                        newSlides = new Lightbox(response.media[i]);
-                        lightboxArray.push(newSlides);
-                        lightboxArray.sort(function(a, b){
-                            if(a.title < b.title) { return -1; }
-                            if(a.title > b.title) { return 1; }
-                            return 0;
-                        })
-                    }
-                }
-                clearPage();
-                clearLightbox();
 
-                for(let i = 0; i < objectArray.length; i++) { 
-                    document.getElementById('medias__list').innerHTML += objectArray[i].display();
-                    document.getElementById('modal__content').innerHTML += lightboxArray[i].createSlide();  
-                }
-                lightboxFunction(); 
-                likeFunction();
-            }     
-        }
+        let filterAlphabet = () => {
+                let value = document.getElementById('toggle__filters').value;
+                if(value === "titre"){
+                    let objectArray = [];
+                    let lightboxArray = [];
+                    let newMedias;
+                    let newSlides;
+                    for(let i=0; i < response.media.length; i++) {
+                        if(response.media[i].photographerId == urlID) {
+                            //Créer les médias ici et les ajoute dans la liste objectArray    
+                            newMedias = new MediasFactory(response.media[i])
+                            objectArray.push(newMedias);     
+                            objectArray.sort(function(a, b){
+                                if(a.title < b.title) { return -1; }
+                                if(a.title > b.title) { return 1; }
+                                return 0;
+                            }) 
+                            
+                            newSlides = new Lightbox(response.media[i]);
+                            lightboxArray.push(newSlides);
+                            lightboxArray.sort(function(a, b){
+                                if(a.title < b.title) { return -1; }
+                                if(a.title > b.title) { return 1; }
+                                return 0;
+                            })
+                        }
+                    }
+                    clearPage();
+                    clearLightbox();
+
+                    for(let i = 0; i < objectArray.length; i++) { 
+                        document.getElementById('medias__list').innerHTML += objectArray[i].display();
+                        document.getElementById('modal__content').innerHTML += lightboxArray[i].createSlide();  
+                    }
+                    lightboxFunction(); 
+                    likeFunction();
+                }     
+            }
 
         if(document.getElementById('toggle__filters')) {document.getElementById('toggle__filters').addEventListener('change', filterAlphabet)}
-        else { }
-        
-
-
 
         let filterPop = () => {
             let value = document.getElementById('toggle__filters').value;
@@ -179,8 +172,6 @@ export default function filterTags() {
             }     
         }
         if(document.getElementById('toggle__filters')) {document.getElementById('toggle__filters').addEventListener('change', filterPop)}
-        else { }
-
 
         
     let filterDate = () => {
@@ -214,7 +205,6 @@ export default function filterTags() {
             }  
         }     
         if(document.getElementById('toggle__filters')) {document.getElementById('toggle__filters').addEventListener('change', filterDate)}
-        else { }
         
     });
 }

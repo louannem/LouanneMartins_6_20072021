@@ -1,14 +1,14 @@
-import {Photographer} from './components/Photographers.js';
-import filterTags from './utils/filters'
-import scrollBtn from './utils/scrollBtn'
+import {Photographer} from '../components/Photographers';
+import filterTags from '../utils/filters';
+import scrollBtn from '../utils/scrollBtn';
 
-    fetch('data.json')
+    fetch('./data/data.json')
     .then((response)=> { return response.json();  })
     .then((response)=> {        
 
        //Créée un nouveau photographe & l'affiche
        for(let i=0; i<response.photographers.length;i++){
-            let photographers = new Photographer(response.photographers[i].id, response.photographers[i].name, response.photographers[i].city, response.photographers[i].country, response.photographers[i].tagline, response.photographers[i].price,  response.photographers[i].portrait);
+            let photographers = new Photographer(response.photographers[i]);
             if(document.getElementById('photographers-list')) {
                 document.getElementById('photographers-list').innerHTML += photographers.photographerBlock();
                 let photographer = document.getElementById(response.photographers[i].id);
@@ -28,7 +28,7 @@ import scrollBtn from './utils/scrollBtn'
                 filterTags(); 
                 scrollBtn();
             }
-        else { }
+        
 
 
        }

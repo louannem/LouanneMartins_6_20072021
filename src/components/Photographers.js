@@ -1,13 +1,13 @@
 //Class pour un photographe
 export class Photographer {
-    constructor(id, name,city, country, tagline, price, portrait) {
-        this.id = id;
-        this.name = name;
-        this.city = city;
-        this.country = country;
-        this.tagline = tagline;
-        this.price = price;
-        this.portrait = portrait;
+    constructor(object) {
+        this.id = object.id;
+        this.name = object.name;
+        this.city = object.city;
+        this.country = object.country;
+        this.tagline = object.tagline;
+        this.price = object.price;
+        this.portrait = object.portrait;
 
     }
 
@@ -16,7 +16,7 @@ export class Photographer {
         return `
             <article id="${this.id}" class="photographer__block">
                 <a href="photographer.html?id=${this.id}">
-                <img src="img/index/${this.portrait}" alt="">
+                <img src="../img/index/${this.portrait}" alt="">
                 <h2>${this.name}</h2>
             </a>
 
@@ -41,7 +41,7 @@ export class Photographer {
 
             <div class="block__col" id="photographer__contact"><button href="" onclick="" id="contact-btn">Contactez-moi</button></div>
 
-            <div class="block__col" id="block__img"><img src="img/index/${this.portrait}" height="200px" width="200px" alt="${this.name}"></div>
+            <div class="block__col" id="block__img"><img src="../img/index/${this.portrait}" height="200px" width="200px" alt="${this.name}"></div>
             
         </div>
         `

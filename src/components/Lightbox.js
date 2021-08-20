@@ -24,7 +24,7 @@ class ImageLightbox {
     createSlide() {
         return `
         <div class="slide">
-            <div class="media__block"><img class="slide__media" src="img/${this.photographerId}/${this.image}" alt="${this.alt}"></img></div>
+            <div class="media__block"><img class="slide__media" src="../img/${this.photographerId}/${this.image}" alt="${this.alt}"></img></div>
             <span id="media-title">${this.title}</span>
         </div>
     `
@@ -46,7 +46,7 @@ class VideoLightbox {
     createSlide() {
         return `
         <div class="slide">
-            <video controls class="slide__media" src="img/${this.photographerId}/${this.video}" alt="${this.alt}"></video>
+            <video controls class="slide__media" src="../img/${this.photographerId}/${this.video}" alt="${this.alt}"></video>
             <span id="media-title">${this.title}</span>
         </div>
     `

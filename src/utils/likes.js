@@ -29,6 +29,7 @@ export default function likeFunction() {
                 let iconBtn = likeID.nextElementSibling;
 
                 //Fonction pour incrémenter le like
+                // eslint-disable-next-line no-cond-assign
                 if(likeID = response.media[i].id) { 
                     //Récupère la valeur des likes
                     let likeNumber = document.getElementById(response.media[i].id).textContent;
