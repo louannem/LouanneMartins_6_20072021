@@ -41,6 +41,7 @@ export default function likeFunction() {
                     let addedLike = 0;
                     let likeHolder = 0;
 
+                    // eslint-disable-next-line no-unused-vars
                     for(let j= 0; j < storeLike.length; j++) {  likeTotal += storeLike[j];    }
 
                     let addLike = () => {
