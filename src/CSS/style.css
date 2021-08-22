@@ -177,6 +177,8 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
 #contact-btn:focus-visible { outline: none;}
 
 #block__img { align-items: flex-end; justify-content: center;}
+.img__container { width: 200px; height: 200px; border: 500px;}
+.img__container img { width: 100%; height: 100%;}
 
 aside {
     position: fixed;
