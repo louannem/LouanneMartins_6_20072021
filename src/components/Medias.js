@@ -28,7 +28,7 @@ class Image {
     display(){
         return `
         <article class="image__block">
-            <a href="" class="media__link">
+            <a href="" class="media__link" aria-label="Afficher ${this.title}">
             <img alt="${this.alt}" src="../img/${this.photographerId}/${this.image}"></img>
             </a>
             <div class="image__meta">
@@ -59,7 +59,7 @@ class Video {
     display(){
         return `
         <article class="image__block">
-            <a href="" class="media__link">
+            <a href="" class="media__link" aria-label="Afficher ${this.title}">
             <video src="../img/${this.photographerId}/${this.video}" autoplay=false></video>
             </a>
             <div class="image__meta">
