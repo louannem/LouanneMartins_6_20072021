@@ -7,6 +7,7 @@ export default function formFunction() {
         document.getElementById('form__background').style.display="flex";  
         document.getElementById('form__background').setAttribute('aria-hidden', 'false');
         document.getElementById('main__wrapper').setAttribute('aria-hidden', 'true')  ;
+        document.getElementById('prenom').focus();
     }
 
     if( document.getElementById('contact-btn') || document.getElementById('contact-btn-mobile')) {
@@ -19,6 +20,7 @@ export default function formFunction() {
      */
     let closeForm = () => { 
         document.getElementById('form__background').style.display = "none"; 
+        document.getElementById('contact-btn').focus();
         document.getElementById('form__background').setAttribute('aria-hidden', 'true') ;
         document.getElementById('main__wrapper').setAttribute('aria-hidden', 'false')
     }

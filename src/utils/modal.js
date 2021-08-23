@@ -39,13 +39,15 @@ export default function lightboxFunction() {
 
     //Switch to next slide
     let nextBtn =  document.getElementsByClassName('next');
-    for(let i=0; i<nextBtn.length;i++) { nextBtn[i].addEventListener('click', function() {
+    for(let i=0; i<nextBtn.length;i++) { nextBtn[i].addEventListener('click', function(e) {
+        e.preventDefault();
         switchSlide(1)
     });}
 
     //Switch to previous slide
     let previousBtn =  document.getElementsByClassName('previous');
-    for(let i=0; i<previousBtn.length;i++) { previousBtn[i].addEventListener('click', function() {
+    for(let i=0; i<previousBtn.length;i++) { previousBtn[i].addEventListener('click', function(e) {
+        e.preventDefault();
         switchSlide(-1)
     });}
 
