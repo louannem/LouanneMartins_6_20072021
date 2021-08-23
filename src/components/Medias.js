@@ -35,7 +35,7 @@ class Image {
                 <span class="image__title">${this.title}</span>
                 <div class="likes__block"> 
                     <span class="likes__numbers" id="${this.id}">${this.likes}</span>
-                    <i class="fas fa-heart likes__icon"></i>
+                    <i class="fas fa-heart likes__icon" title="likes"></i>
                 </div>
             </div>
         </article>  
@@ -66,7 +66,7 @@ class Video {
                 <span class="image__title">${this.title}</span>
                 <div class="likes__block"> 
                     <span class="likes__numbers" id="${this.id}">${this.likes}</span>
-                    <i class="fas fa-heart likes__icon" aria-label ="likes"></i>
+                    <i class="fas fa-heart likes__icon" title="likes"></i>
                 </div>
             </div>
         </article> 
