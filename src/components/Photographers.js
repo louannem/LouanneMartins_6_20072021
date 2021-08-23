@@ -15,7 +15,7 @@ export class Photographer {
     photographerBlock() {
         return `
             <article id="${this.id}" class="photographer__block">
-                <a href="photographer.html?id=${this.id}">
+                <a href="photographer.html?id=${this.id}" aria-label="${this.name}">
                 <img src="../img/index/${this.portrait}" alt="">
                 <h2>${this.name}</h2>
             </a>
