@@ -22,6 +22,7 @@ body, html {
 }
 
 a { text-decoration: none;}
+button {background: none;  border: none;}
 
 header, #photographer-block, #medias__list { padding: 1em;}
 header { 
@@ -140,6 +141,11 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
 
 
 /** PAGE PHOTOGRAPHE **/
+.hide {
+    height: 0;
+    overflow: hidden;
+}
+
 #photographer__block {
     width: 100%;
     background-color: var(--lightgray);

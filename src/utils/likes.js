@@ -15,6 +15,10 @@ export default function likeFunction() {
 
     //Nombre de likes par défaut
     likesSum = 0;
+    
+    /**
+     * Adds each like in the array
+     */
     likesNumbers.forEach(element => { likeArray.push(element.textContent); })
     for(let i= 0; i < likeArray.length; i++) {  likesSum += Number(likeArray[i]);   }
     if(document.getElementById('likes__total')) { document.getElementById('likes__total').innerText = likesSum;  }
@@ -44,6 +48,9 @@ export default function likeFunction() {
                     // eslint-disable-next-line no-unused-vars
                     for(let j= 0; j < storeLike.length; j++) {  likeTotal += storeLike[j];    }
 
+                    /**
+                     * Increment likes number
+                     */
                     let addLike = () => {
                         //Condition pour toggle les likes
                         if(likeHolder >= 1) { likeNumber -= 1; likeHolder -= 1; addedLike = -1; }

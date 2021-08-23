@@ -1,6 +1,8 @@
 export default function formFunction() {
 
-    //Open the form
+    /**
+     * Open the form
+     */
     let openForm = () => { 
         document.getElementById('form__background').style.display="flex";  
         document.getElementById('form__background').setAttribute('aria-hidden', 'false');
@@ -12,7 +14,9 @@ export default function formFunction() {
         document.getElementById('contact-btn-mobile').addEventListener('click', openForm);
     }
 
-    //Close the form
+    /**
+     * Close the form
+     */
     let closeForm = () => { 
         document.getElementById('form__background').style.display = "none"; 
         document.getElementById('form__background').setAttribute('aria-hidden', 'true') ;
@@ -21,7 +25,10 @@ export default function formFunction() {
 
     if(document.getElementById('close-form')) { document.getElementById('close-form').addEventListener('click', closeForm)}
 
-    //Send the form
+    /**
+     * Send the form
+     * @param {*} e Event parameter
+     */
     let sendForm = (e) => {
         let lastName =  document.getElementById('nom').value;
         let firstName =  document.getElementById('prenom').value;
@@ -34,6 +41,9 @@ export default function formFunction() {
 
     if(document.getElementById('submit-btn')) {document.getElementById('submit-btn').addEventListener('click', sendForm)}
 
+    /**
+     * Keyboard controlers
+     */
     window.addEventListener('keydown', function(e) {
         switch (e.key) {
             case "Escape":
