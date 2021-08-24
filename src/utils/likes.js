@@ -51,7 +51,8 @@ export default function likeFunction() {
                     /**
                      * Increment likes number
                      */
-                    let addLike = () => {
+                    let addLike = (e) => {
+                        e.preventDefault();
                         //Condition pour toggle les likes
                         if(likeHolder >= 1) { likeNumber -= 1; likeHolder -= 1; addedLike = -1; }
                         else if(likeHolder == 0) { likeNumber += 1; likeHolder += 1; addedLike = 1; }

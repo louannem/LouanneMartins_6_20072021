@@ -207,7 +207,7 @@ aside i { margin: 0px 5px}
 select {width: 170px; font-size: 1.1em; height: 60px; display: flex; align-items: center; margin: 0px 20px}
 select, option { border: none; }
 #block__filter { height: auto; display: flex; align-items: center; padding: 30px 1em;}
-#block__filter span { font-weight: 700; font-size: 1.1em;}
+#block__filter label { font-weight: 700; font-size: 1.1em;}
 #toggle__filters { background-color: var(--red); border-radius: 5px; padding: 5px; box-sizing: border-box; color: #ffff}
 
 #medias__list { margin-top: 0px;}
@@ -377,7 +377,7 @@ input[type="submit"]  { cursor: pointer; background-color: var(--red); color: #f
     #photographer__info .tag-list { margin-top: 30px}
     #photographer-block #photographer__contact{ display: none  }
     #block__img { justify-content: flex-start;}
-    #block__img img { width: 100px; height: 100px;}
+    .img__container { width: 100px; height: 100px;}
 
     #contact__mobile { 
         display: flex;
