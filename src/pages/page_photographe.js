@@ -34,7 +34,15 @@ fetchData()
                 let tags = document.createElement('a');
                 tags.setAttribute('href', 'index.html');
                 tagBlock.appendChild(tags);
-                tags.innerText = " #" + response.photographers[i].tags[j] + " ";
+                
+                let spanTag = document.createElement('span');
+                spanTag.setAttribute('aria-hidden', 'true');
+                spanTag.innerText = "#";
+                tags.appendChild(spanTag);
+
+                let spanText = document.createElement('span');
+                spanText.innerText = response.photographers[i].tags[j] + " ";
+                tags.appendChild(spanText);
                 tags.classList.add('tags');
             }
 

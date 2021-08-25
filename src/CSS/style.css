@@ -36,6 +36,7 @@ header {
 }
 
 nav a, .tag-list .tags {
+    display: inline;
     color:var(--red);
     font-size: 0.9em;
     font-weight: 500;
@@ -135,6 +136,7 @@ article span, .location, .tag-list { font-size: 0.95em; line-height: 1.5em; marg
 
 .tag-list { display: flex;}
 .tag-list span { color: var(--red)}
+.tags:hover span, .tags:focus span { color: #ffff}
 
 
 
